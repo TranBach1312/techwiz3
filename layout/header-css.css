@@ -1,0 +1,123 @@
+.header{
+    height: 80px;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    position: fixed;
+    background-color: white;
+    z-index: 2;
+}
+
+.header .main-menu{
+    width: 570px;
+}
+
+.header .main-menu ul {
+    list-style: none;
+    display: flex;
+
+}
+.header .main-menu ul li{
+    text-transform: uppercase;
+    padding: 20px;
+    font-weight: 600;
+    font-size: 12px;
+
+}
+.header .logo{
+    width: 400px;
+}
+.header .logo img{
+    width: 140px;
+    height: auto;
+}
+.header .search{
+    display: flex;
+    flex-direction: row;
+    border: 0.5px solid rgb(177, 177, 177);
+    align-content: center;
+    width: 240px;
+    border-radius: 3px;
+    overflow: hidden;
+    
+}
+.header .search form{
+    padding: 0px 5px;
+}
+.header .search button, .header .search input{
+    border: none;
+    outline: none;
+    background-color: transparent;
+    height: 40px;
+}
+.header .search input{
+    width: 80%;
+    color: #57585A;
+}
+.header .search button{
+    width: 10%;
+    height: 100%;
+}
+.header .search input::placeholder{
+    text-transform: uppercase;
+    color: #57585A;
+}
+
+.header .search button i{
+    color: black;
+}
+.fa-solid{
+    color: black;
+}
+.header .header-actions{
+    height: 100%;
+    width: 120px;
+    margin-left: 20px;
+}
+.header .header-actions ul{
+    height: 100%;
+    list-style-type: none;
+    display: flex;
+    align-items: center;
+}
+.header .header-actions ul li{
+    width: 30px;
+    height: 30px;
+    line-height: 30px;
+    text-align: center;
+}
+.header .main-menu .sub-menu{
+    display: none;
+    width: 1380px;
+    position: absolute;
+    top: 60px;
+    left: 0px;
+    border: 1px ;
+    border: 0.5px solid #f2f2f2;
+    border-radius: 5px;
+    background-color: white;
+    transition: all ease 0.5s;
+    animation-name: showMenu;
+    animation-duration: 0.5s;
+    animation-fill-mode: forwards;
+}
+.header .main-menu .sub-menu ul{
+    flex-direction: column;
+    float: left;
+    padding: 10px 70px;
+}
+.header .main-menu .sub-menu ul h3{
+    text-align: center;
+}
+.header .main-menu .sub-menu ul li a{
+    text-decoration: none;
+    color: #57585A;
+    font-size: 12px;
+}
+.header .main-menu ul li:hover .sub-menu, .header .main-menu ul li .sub-menu:hover {
+    display: block;
+}
+@keyframes showMenu {
+    from{transform: translateY(30%);}
+    to{transform: translateY(0);}
+}

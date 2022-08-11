@@ -1,0 +1,27 @@
+[
+    {
+        "id": 1,
+        "id_category": 2,
+        "name": "Jackets"
+    },
+    {
+        "id": 2,
+        "id_category": 2,
+        "name": "Chemise"
+    },
+    {
+        "id": 3,
+        "id_category": 2,
+        "name": "Tshirts"
+    },
+    {
+        "id": 4,
+        "id_category": 1,
+        "name": "Jeans"
+    },
+    {
+        "id": 5,
+        "id_category": 1,
+        "name": "Short"
+    }
+]

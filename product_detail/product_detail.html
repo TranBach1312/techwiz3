@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script> 
+    <script src="../include/include.js" defer></script>
+    <link rel="stylesheet" href="product_detail.css">
+    
+    <title>Document</title>
+</head>
+
+<body>
+    <div class="container">
+        <div class="header">
+
+        </div>
+        
+        <div class="small-container product">
+            <div class="row">
+                <div class="col-2-big-img">
+                    <div class="main-img" style="display: flex;">
+                        <img src="https://pubcdn.ivymoda.com/files/product/thumab/1600/2022/06/04/367e3ea60dbac47277e4e16600dc7735.jpg"
+                            width="100%" />
+                    </div>
+                </div>
+                <div class="col-3-sub-img">
+                    <div class="small-img-col">
+                        <img src="https://pubcdn.ivymoda.com/files/product/thumab/1600/2022/06/04/367e3ea60dbac47277e4e16600dc7735.jpg"
+                            width="100%" class="small-img1" onclick="showing(this.src)" />
+                    </div>
+
+                    <div class="small-img-col">
+                        <img src="https://pubcdn.ivymoda.com/files/product/thumab/1600/2022/06/04/0dd9b7cb7f146a7dcbf1a2c3c883f4cf.jpg"
+                            width="100%" class="small-img2" onclick="showing(this.src)" />
+                    </div>
+
+                    <div class="small-img-col">
+                        <img src="https://pubcdn.ivymoda.com/files/product/thumab/1600/2022/06/04/367e3ea60dbac47277e4e16600dc7735.jpg"
+                            width="100%" class="small-img1" onclick="showing(this.src)" />
+                    </div>
+
+                    <div class="small-img-col">
+                        <img src="https://pubcdn.ivymoda.com/files/product/thumab/1600/2022/06/06/93f876b63f4dc488bb993eccb8b0a6dd.jpg"
+                            width="100%" class="small-img3" onclick="showing(this.src)" />
+                    </div>
+                </div>
+                <div class="col-1-text">
+                    <p id="Name">ĐẦM LỤA CỔ ĐỔ</p>
+                    <div class="price">
+                        <b id="Price">745.000đ </b>
+                        <del id="DelPrice">1.490.000đ</del>
+                            <span class="sale"id="Sale">-50
+                            <span>%</span></span>
+                    </div>
+                    
+                    <div class="size">
+                        <span id="Size">S</span>
+                        <span id="Size">M</span>
+                        <span id="Size">L</span>
+                        <span id="Size">XL</span>
+                        <span id="Size">XXL</span>
+                    </div>
+                    
+                    <p id="Color">Màu sắc: Họa tiết Xanh Lime</p>
+                    <p id="Stock">Stock</p>
+                    <!-- Stock : Available or not available -->
+                    <a href="" class="btn">Add to Cart</a>
+                    <a href="" class="btn1">Buy</a>
+                    <div class="tab">
+                        <button class="tablinks" onclick="openCity(event, 'London')">London</button>
+                        <button class="tablinks" onclick="openCity(event, 'Paris')">Paris</button>
+                        <button class="tablinks" onclick="openCity(event, 'Tokyo')">Tokyo</button>
+                        <button class="tablinks" onclick="openCity(event, 'Sth')">Sth</button>
+                      </div>
+                      
+                      
+                      <div id="London" class="tabcontent">
+                        <div class="post">
+                        <h3>London</h3>
+                        <p id="content" class="content">London is the capital city of England.</p>
+                        <button onclick="readMore(this)">Read More</button>
+                      </div>
+                      </div>
+                      
+                      
+                      <div id="Paris" class="tabcontent">
+                        <div class="post">
+                        <h3>Paris</h3>
+                        <p id="content" class="content">Paris is the capital of France.</p>
+                        <button onclick="readMore(this)">Read More</button>
+                      </div>
+                      </div>
+                      
+                      
+                      <div id="Tokyo" class="tabcontent">
+                        <div class="post">
+                        <h3>Tokyo</h3>
+                        <p id="content" class="content">Tokyo is the capital of Japan.</p>
+                        <button onclick="readMore(this)">Read More</button>
+                      </div>
+                      </div>
+                      
+                      
+                      <div id="Sth" class="tabcontent">
+                        <div class="post">
+                        <h3>Product Detail</h3>
+                         <p id="content" class="content">Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                          Adipisci debitis culpa ipsam. Repellendus dicta rerum numquam cumque perferendis iure
+                          Architecto, tenetur aperiam.</p>
+                      <button onclick="readMore(this)">Read More</button>
+                      </div>
+                      </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="small-container">
+            <h1 style="text-align: center;">Related Products</h1>
+        
+            <div class="row1">
+            <div class="col-4">
+                <a href="">
+                    <img src="https://pubcdn.ivymoda.com/files/product/thumab/1600/2022/06/04/367e3ea60dbac47277e4e16600dc7735.jpg"
+                        alt="stuff" style="width:100%">
+                    <img src="https://pubcdn.ivymoda.com/files/product/thumab/1600/2022/06/06/93f876b63f4dc488bb993eccb8b0a6dd.jpg"
+                        alt="stuff" style="width:100%">
+                </a>
+            </div>
+
+            <div class="col-4">
+                <a href="">
+                    <img src="https://pubcdn.ivymoda.com/files/product/thumab/1600/2022/06/04/367e3ea60dbac47277e4e16600dc7735.jpg"
+                        alt="stuff" style="width:100%">
+                    <img src="https://pubcdn.ivymoda.com/files/product/thumab/1600/2022/06/06/93f876b63f4dc488bb993eccb8b0a6dd.jpg"
+                        alt="stuff" style="width:100%">
+                </a>
+            </div>
+
+            <div class="col-4">
+                <a href="">
+                    <img src="https://pubcdn.ivymoda.com/files/product/thumab/1600/2022/06/04/367e3ea60dbac47277e4e16600dc7735.jpg"
+                        alt="stuff" style="width:100%">
+                    <img src="https://pubcdn.ivymoda.com/files/product/thumab/1600/2022/06/06/93f876b63f4dc488bb993eccb8b0a6dd.jpg"
+                        alt="stuff" style="width:100%">
+                </a>
+            </div>
+        </div>
+    </div>
+        <div class="trending">
+            <div>
+                <img src="https://pubcdn.ivymoda.com/files/news/2022/08/02/ec263a1c4def983e56cd5edecbeb64ff.jpg"  width="100%">
+                <div class="link-trending">
+                    <a href=""></a><button class="btn1">XEM NGAY BST</button></a>
+                </div>
+            </div>
+            
+        </div>
+        <div class="footer"></div>
+    </div>
+    <script>
+        function openCity(evt, cityName) {
+  var i, tabcontent, tablinks;
+  tabcontent = document.getElementsByClassName("tabcontent");
+  for (i = 0; i < tabcontent.length; i++) {
+    tabcontent[i].style.display = "none";
+  }
+  tablinks = document.getElementsByClassName("tablinks");
+  for (i = 0; i < tablinks.length; i++) {
+    tablinks[i].className = tablinks[i].className.replace(" active", "");
+  }
+  document.getElementById(cityName).style.display = "block";
+  evt.currentTarget.className += " active";
+}
+
+
+        var Img = document.querySelector('.main-img img');
+        function showing(pic) {
+            Img.src = pic;
+        }
+
+        var no = 100;
+        var contents = document.querySelectorAll(".content");
+        console.log(contents);
+        contents.forEach(content => {
+            if (content.textContent.length < no) {
+                content.nextElementSibling.style.display = "none";
+            } else {
+                var displayText = content.textContent.slice(0, no);
+                var moreText = content.textContent.slice(no);
+                content.innerHTML = `${displayText}<span class="dots">...</span>
+            <span class="hide more">${moreText}</span>`;
+            }
+        });
+        function readMore(btn) {
+            var post = btn.parentElement;
+            //console.log(post);
+            post.querySelector(".dots").classList.toggle("hide");
+            post.querySelector(".more").classList.toggle("hide");
+            btn.textContent == "Read More" ? btn.textContent = "Read Less" : btn.textContent = "Read More";
+        }
+    </script>
+</body>
+
+</html>

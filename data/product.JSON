@@ -1,0 +1,36 @@
+[
+    {
+        "id": 1,
+        "id_category": 2,
+        "id_sub_category": 1,
+        "title": "Vintage Sheep Leather Bomber Jacket",
+        "gender": "nam",
+        "price": "$230",
+        "color": "Brown",
+        "brand": "Korea",
+        "content": "High quality sheepskin coat with good keeping warm, breathable, soft. Suitable for both winter and summer wear. The shirt has been dry cleaned, dried and polished. The shirt has a small scratch on the collar.Material: 100%  fleece .Size: Size M(Lengt: 64cm, Chest: 52cm, Shouder: 51cm, Sleeve length: 54cm)"
+    },
+    {
+        "id": 2,
+        
+        "id_category": 2,
+        "id_sub_category": 1,
+        "title": "Lafuma Goose Down Jacket",
+        "gender": "nam",
+        "price": "$220",
+        "color": "brown orange",
+        "brand": "localbrand",
+        "content": "The fabric layer uses windstopper technology. The jacket is water resistant and can be used in light rain. High quality goose down vest. The density of feathers and body hair of the shirt is high - 90/10. The amount of feathers of the shirt is still very thick. The hood is detachable. Austria is very new.Size S(Length: 65cm, Chest: 47cm, Shoude: 37cm, Sleeve length: 58cm)"
+    },
+    {
+        "id": 3,       
+        "id_category": 2,
+        "id_sub_category": 1,
+        "title": "Millet Goose Down Jacket",
+        "gender": "nam",
+        "price": "$111",
+        "color": "dark blue",
+        "brand": "HM",
+        "content": "The fabric layer uses windstopper technology. The jacket is water resistant and can be used in light rain. Size M(Length: 61cm, Chest: 50cm, Shoudei: 40cm, Sleeve length: 57cm)"
+    }
+]
