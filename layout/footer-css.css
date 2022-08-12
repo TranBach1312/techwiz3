@@ -135,3 +135,35 @@
     font-weight: 500;
     font-size: 18px;
 }
+.footer-item:last-child{
+    justify-content: space-between;
+}
+.calendar{
+    
+    display: flex;
+    flex-direction: row;
+    border-radius: 20px 0;
+    overflow: hidden;
+}
+.cal-item{
+    display: flex;
+    flex-direction: column-reverse;
+    width:  70px;
+    height: 70px;
+    justify-content: center;
+    align-items: center;
+}
+.cal-item:nth-child(odd){
+    flex-direction: column;
+}
+.cal-item p{
+    font-size: 20px;
+}
+.cal-item:nth-child(even){
+    background-color: #ABE3DE;
+    color: black;
+}
+.cal-item:nth-child(odd){
+    background-color: #218ADB;
+    color: white;
+}

@@ -32,3 +32,7 @@ function showSlides() {
 }
 
 
+function goToProd(id){
+  localStorage.setItem("p_id", id);
+  window.location.href = "../product_detail/product_detail.html";
+}

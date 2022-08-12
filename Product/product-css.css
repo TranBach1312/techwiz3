@@ -18,12 +18,11 @@ a {
     display: flex;
 }
 
-.product-title {
-    list-style-type: none;
-    display: flex;
-    align-items: center;
-    padding: 16px 0;
-    border-bottom: 1px solid #f7f8f9;
+.title-product {
+    height: 50px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
 }
 
 ol {
@@ -46,7 +45,7 @@ ol>li>a {
     width: 100%;
     display: flex;
     flex-direction: column;
-    justify-content: start; 
+    justify-content: start;
     align-items: flex-start;
 }
 
@@ -58,7 +57,7 @@ ol>li>a {
 .sidebar-prod .list-side {
     max-height: 500px;
     width: 270px;
-    display: flex; 
+    display: flex;
     flex-direction: column;
     justify-content: start;
 }
@@ -79,25 +78,27 @@ ol>li>a {
     font-weight: normal;
     cursor: pointer;
 }
-.sub-list-menu{
+
+.sub-list-menu {
     width: 100%;
     flex-wrap: wrap;
 }
-.sub-list-side{
+
+.sub-list-side {
     display: flex;
     border: 1px solid #6C6D70;
     height: 32px;
-    width: 47px;    
+    width: 47px;
     align-items: center;
     text-align: center;
     justify-content: center;
     border-radius: 16px 0px;
     margin-right: 12px;
-    margin-bottom: 10px ;
+    margin-bottom: 10px;
     color: #6C6D70;
     font-size: 12px;
 
-   
+
 }
 
 .button-side-btn {
@@ -135,9 +136,11 @@ ol>li>a {
     justify-content: flex-start;
     align-items: baseline;
 }
-.main-prod>.top-main-prod>h1{
+
+.main-prod>.top-main-prod>h1 {
     margin-left: 10px;
 }
+
 .product {
     position: relative;
     padding: 5px;
@@ -150,7 +153,7 @@ ol>li>a {
 
 }
 
-.thumb-product a img {
+.thumb-product img {
     display: block;
     width: 100%;
 }
@@ -176,12 +179,20 @@ ol>li>a {
     vertical-align: middle;
     margin-left: 5px;
 }
-.product>.info-product>.list-color img{
+
+.price-product ins strike {
+    color: #57585A;
+    font-size: 12px;
+}
+
+.product>.info-product>.list-color {
     border-radius: 50%;
     width: 18px;
     height: 18px;
+    float: right;
 }
-.add-to-cart span {
+
+.add-to-cart {
     position: absolute;
     bottom: 8px;
     right: 20px;
@@ -195,4 +206,23 @@ ol>li>a {
     justify-content: center;
     border: 1px solid transparent;
     cursor: pointer;
+}
+.btn-cart{
+    cursor: pointer;
+}
+.btn-cart:hover i{
+
+    color: #dc633a;
+}
+.btn-cart i{
+    color: white;
+}
+.disable {
+    cursor: no-drop;
+    background-color: #F7F8F9;
+
+}
+
+.disable i{
+    color: #6C6D70;
 }

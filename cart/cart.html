@@ -8,6 +8,12 @@
     <title>Document</title>
     <link rel="stylesheet" href="cart-css.css">
     <script src="https://unpkg.com/boxicons@2.1.2/dist/boxicons.js"></script>
+    <script src="https://kit.fontawesome.com/2f97f7412a.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="../layout/style.css">
+    <link rel="stylesheet" href="../layout/header-css.css">
+    <link rel="stylesheet" href="../layout/footer-css.css">
+    <script src="../layout/header-controller.js"></script>
+    <script src="../layout/footer-controller.js" defer></script>
 </head>
 
 <body>
@@ -101,6 +107,12 @@
             </div>
         </div>
     </div>
+    <script>
+        
+        $(".header").load("../layout/header.html")
+
+        $(".footer").load("../layout/footer.html")
+    </script>
 </body>
 
 </html>

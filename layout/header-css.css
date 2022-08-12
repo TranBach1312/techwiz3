@@ -1,11 +1,12 @@
 .header{
     height: 80px;
-    width: 100%;
+    width: 1380px;
     display: flex;
     align-items: center;
     position: fixed;
     background-color: white;
     z-index: 2;
+    border-bottom: 1px solid #57585A;
 }
 
 .header .main-menu{
@@ -30,6 +31,7 @@
 .header .logo img{
     width: 140px;
     height: auto;
+    cursor: pointer;
 }
 .header .search{
     display: flex;
@@ -71,7 +73,7 @@
 }
 .header .header-actions{
     height: 100%;
-    width: 120px;
+    /* width: 270px; */
     margin-left: 20px;
 }
 .header .header-actions ul{
@@ -81,10 +83,18 @@
     align-items: center;
 }
 .header .header-actions ul li{
-    width: 30px;
+    /* width: 30px; */
     height: 30px;
+    margin-right: 10px;
     line-height: 30px;
     text-align: center;
+}
+.header .header-actions .uName{
+    overflow: hidden;
+    text-overflow: ellipsis;
+    word-spacing: nowrap !important;
+    width: 100px;
+    text-align: start;
 }
 .header .main-menu .sub-menu{
     display: none;
@@ -108,11 +118,18 @@
 }
 .header .main-menu .sub-menu ul h3{
     text-align: center;
+    color: #57585A !important;
 }
-.header .main-menu .sub-menu ul li a{
-    text-decoration: none;
+.header .main-menu .sub-menu ul li button{
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
     color: #57585A;
     font-size: 12px;
+}
+
+.header .main-menu .sub-menu ul li:hover button, .header .main-menu ul li:hover{
+    color: #AC2F33;
 }
 .header .main-menu ul li:hover .sub-menu, .header .main-menu ul li .sub-menu:hover {
     display: block;
