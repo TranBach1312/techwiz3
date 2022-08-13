@@ -1,9 +1,19 @@
 
 $(document).ready(function () {
+   
+    var carts = JSON.parse(localStorage.getItem("carts"));
+    var carted = false;    
     var p_id = localStorage.getItem("p_id");
     if (p_id) {
         $.getJSON("../data/product.JSON",
             function (data) {
+                
+                if(carts){
+                    carts.forEach(cart => {
+                        if(cart == data[p_id].id){
+                            carted = true;
+                        }
+                    });}
                 var c = `<div class="row">
     <div class="col-2-big-img">
         <div class="main-img" style="display: flex;">
@@ -13,10 +23,10 @@ $(document).ready(function () {
     </div>
     <div class="col-3-sub-img">
         `
-                for (i = 2; i <= data[p_id].img; i++) {
+                for (i = 1; i <= data[p_id].img; i++) {
                     c += `<div class="small-img-col">
                     <img src="../img/product_img/`+ data[p_id].id_category + '/' + data[p_id].id_sub_category + '/' + data[p_id].id + `/` + i + `.jpg"
-                        width="100%" class="small-img3" onclick="showing(this)" />
+                        width="100%" class="small-img" onclick="changeImg(this)"/>
                 </div>`
                 }
                 c += ` </div>
@@ -46,21 +56,32 @@ $(document).ready(function () {
 
         </div>
         <div class="size">
-            <span id="Size">S</span>
+            <span id="Size">`
+            
+            var ordered = JSON.parse(localStorage.getItem("ordered"))
+                var check = true;
+            ordered.forEach(element => {
+                if(data[p_id].id == element){
+                    c += `<strike>Out Stock</strike>`
+                    check = false;
+                    
+                }
+
+            });
+            if(check){
+                c+="Stock"
+            }
+        c += `</span>
         </div>
         
-        <p id="Stock">Stock</p>
-        <!-- Stock : Available or not available -->
-        <a href="" class="btn">Add to Cart</a>
-        <a href="" class="btn1">Buy</a>
-        <a href="" class="btn1">&#10084;</a>
+        <div class="actions" ><button class="btn `+(carted||!check?"disable":"")+`" `+(carted?"disabled":"")+` onclick="addToCart(`+data[p_id].id+`, this)">Add to Cart</button>
+
+        <a href="" class="btn1">&#10084;</a></div>
           
             <div class="post">
             <h3>Product Detail</h3>
-             <p id="content" class="content">Lorem ipsum dolor sit amet consectetur adipisicing elit.
-              Adipisci debitis culpa ipsam. Repellendus dicta rerum numquam cumque perferendis iure
-              Architecto, tenetur aperiam.</p>
-          <button onclick="readMore(this)">Read More</button>
+             <p id="content" class="content">`+data[p_id].content+`</p>
+          <button class="btn-read" onclick="readMore(this)">M</button>
           </div>
     </div>
 </div>`;
@@ -68,5 +89,14 @@ $(document).ready(function () {
             }
         );
     }
-
+   
 });
+function readMore(btn) {
+    var post = btn.parentElement;
+    //console.log(post);
+    post.querySelector(".content").classList.toggle("show");
+    btn.textContent == "M" ? btn.textContent = "L" : btn.textContent = "M";
+}
+function changeImg(that = null){
+    document.querySelector(".main-img img").src = that.src
+}

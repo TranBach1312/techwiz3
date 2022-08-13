@@ -46,18 +46,21 @@ if (document.location.pathname == "/index.html") {
 function goToCate(id) {
     localStorage.removeItem("gender")
     localStorage.removeItem("search")
+    localStorage.setItem("page", 0)
     localStorage.setItem("cateId", id);
     window.location.href = "../product/product.html"
 }
 function goToGender(gender) {
     localStorage.removeItem("cateId")
     localStorage.removeItem("search")
+    localStorage.setItem("page", 0)
     localStorage.setItem("gender", gender)
     window.location.href = "../product/product.html"
 }
 function goToPs() {
     localStorage.removeItem("gender")
     localStorage.removeItem("cateId")
+    localStorage.setItem("page", 0)
     localStorage.removeItem("search")
     window.location.href = "../product/product.html"
 }

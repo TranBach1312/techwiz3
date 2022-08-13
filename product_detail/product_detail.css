@@ -34,14 +34,10 @@
    display: flex;
    flex-wrap: wrap;
    justify-content: space-around;
+   width: 100%;
 }
-
-.row1 {
-   display: flex;
-}
-
 .col-2-big-img img {
-   max-width: 100%;
+   width: 100%;
 }
 
 .small-img-col {
@@ -52,13 +48,15 @@
 
 .col-2-big-img {
    display: flex;
-   width: 40%;
+   width: 50%;
    min-width: 300px;
 }
 
 .col-1-text {
-   width: 40%;
+   width: 35%;
    margin-left: 40px;
+   display: flex;
+   flex-direction: column;
 }
 
 .col-3-sub-img {
@@ -164,10 +162,15 @@ p {
    transition: 0.3s;
 }
 
-.hide {
-   display: none;
+.content{
+   height: 20px;
+   text-overflow: ellipsis;
+   overflow: hidden;
+   word-break: nowrap;
 }
-
+.show{
+   height: fit-content;
+}
 .line-1 {
    height: 1px;
    background: black;
@@ -176,7 +179,7 @@ p {
 /* id style */
 #Name {
    font-weight: 400;
-   font-size: 45px;
+   font-size: 30px;
    line-height: 32px;
    color: #221f20;
 }
@@ -224,7 +227,9 @@ p {
 .rate>label:hover~input:checked~label {
    color: #c59b08;
 }
-
+.actions{
+   margin-top: 100px;
+}
 #Color {
    font-weight: 600;
    font-size: 20px;
@@ -234,8 +239,6 @@ p {
 }
 
 #Size {
-   width: 48px;
-   height: 32px;
    display: flex;
    justify-content: center;
    align-items: center;
@@ -244,13 +247,14 @@ p {
 
 .size {
    display: flex;
-   margin-bottom: 20px;
+}
+.size span{
+   font-size: 30px;
 }
 
-.size span {
-   margin-right: 10px;
+.row1{
+   display: flex;
 }
-
 #Stock {
    font-weight: 600;
    font-size: 30px;
@@ -296,7 +300,9 @@ p {
 .small-container .row .col-3-sub-img {
    align-self: center;
 }
-
+.small-img{
+   height: calc(100%/3);
+}
 .trending {
    position: relative;
 }
@@ -320,9 +326,29 @@ p {
    width: 25px;
    height: 25px;
    border-radius: 50%;
-   margin: 20px 0;
+   margin: 50px 0;
 }
 
 #Color {
    margin-left: 20px;
+}
+
+.disable{
+   background-color: #555;
+   color: white;
+   cursor: no-drop;
+}
+.disable:hover{
+   background-color: #555;
+   color: white;
+}
+.btn-read{
+   background-color: transparent;
+   border: 1px solid gray;
+   font-size: 20px;
+   width: 30px;
+   height: 30px;
+   border-radius: 50%;
+   margin: 0 50%;
+   transform: translateX(-50%);
 }

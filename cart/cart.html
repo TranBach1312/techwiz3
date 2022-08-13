@@ -6,14 +6,19 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <link rel="stylesheet" href="cart-css.css">
     <script src="https://unpkg.com/boxicons@2.1.2/dist/boxicons.js"></script>
+    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+
+    <script src="../include/include.js" defer></script>
     <script src="https://kit.fontawesome.com/2f97f7412a.js" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="../layout/style.css">
     <link rel="stylesheet" href="../layout/header-css.css">
     <link rel="stylesheet" href="../layout/footer-css.css">
-    <script src="../layout/header-controller.js"></script>
     <script src="../layout/footer-controller.js" defer></script>
+    <script src="../layout/header-controller.js?v=1" defer></script>
+    <script src="cart-controller.js"></script>
+    <link rel="stylesheet" href="cart-css.css">
+    <script src="../utils/ntc.js"></script>
 </head>
 
 <body>
@@ -24,45 +29,18 @@
         <div class="main">
             <div class="main-left">
                 <div class="card-list">
-                    <h2 class="card-title">Giỏ hàng của bạn <b>1 Sản Phẩm</b></h2>
+                    <h2 class="card-title">Your cart</h2>
                     <table>
                         <thead class="title-cart">
                             <tr>
-                                <th class="table-title">TÊN SẢN PHẨM</th>
-                                <th class="table-title">CHIẾT KHẤU</th>
-                                <th class="table-title">TỔNG TIỀN</th>
+                                <th class="table-title">Product's Name</th>
+                                <th class="table-title">Discount</th>
+                                <th class="table-title">Total</th>
                                 <th></th>
                             </tr>
                         </thead>
                         <tbody class="title-cart">
-                            <tr>
-                                <td class="cart-product-item">
-                                    <div class="cart_product-item_img">
-                                        <a href="#"><img src="images/item-1.jpg" alt=""></a>
-                                    </div>
-                                    <div class="cart_product-item_content">
-                                        <a href="#">
-                                            <h3 class="cart_product-item_title">Áo lụa cổ cách điệu phối nơ lệch</h3>
-                                        </a>
-                                        <p>Màu sắc: <span>Hồng san hô</span></p>
-                                        <p>Size: <span style="text-transform: uppercase;">xl</span></p>
-                                    </div>
-                                </td>
-                                <td class="col-md-1">
-                                    <p>-395.000đ</p>
-                                    <p style="color: red">( -50% )</p>
-                                </td>
-                                <td class="col-md">
-                                    <div class="cart_product-item_price">
-                                        395.000đ
-                                    </div>
-                                </td>
-                                <td class="col-md">
-                                    <a href="#">
-                                        <box-icon name='trash' type='solid' ></box-icon>
-                                    </a>
-                                </td>
-                            </tr>
+
                         </tbody>
                     </table>
                 </div>
@@ -70,48 +48,75 @@
             <div class="main-right">
                 <div class="cart-summary">
                     <div class="cart-summary_overview">
-                        <h3>Tổng tiền giỏ hàng</h3>
+                        <h3>Total Cart</h3>
                         <div class="cart-summary_overview_item">
-                            <p>Tổng sản phẩm</p>
-                            <p class="total-product">1</p>
+                            <p>Number of Products</p>
+                            <p class="total-product"></p>
                         </div>
                         <div class="cart-summary_overview_item">
-                            <p>Tổng tiền hàng</p>
-                            <p class="total-not-discount">790.000đ</p>
+                            <p>Total Money</p>
+                            <p class="total-not-discount"></p>
                         </div>
                         <div class="cart-summary_overview_item">
-                            <p>Thành tiền</p>
+                            <p>Total Discount</p>
                             <p>
-                                <b class="order-price-total">395.000đ</b>
+                                <b class="order-price-total"></b>
                             </p>
                         </div>
                         <div class="cart-summary_overview_item">
-                            <p>Tạm tính</p>
+                            <p>Total</p>
                             <p>
-                                <b class="order-price-total">395.000đ</b>
+                                <b class="order-price-total"></b>
                             </p>
                         </div>
                     </div>
                     <div class="cart-sumary_note">
                         <div class="content-inner-note">
-                            <p>Miễn phí ship đơn hàng có tổng gía trị trên 2.000.000VND</p>
+                            <p>
+                                Free shipping for orders with total bill from $500</p>
                             <div class="sub-note">
-                                Mua thêm <strong>1.605.000đ </strong> để được miễn phí SHIP
+
                             </div>
                         </div>
                     </div>
                 </div>
-                <div class="cart-sumary_button">
-                    <a class="btn btn-large" href="#">đặt hàng</a>
+                <div class="cart-sumary_button" onclick="order()">
+                    <a class="btn btn-large" href="#">Order</a>
                 </div>
             </div>
         </div>
+        <div class="footer"></div>
     </div>
     <script>
-        
+
         $(".header").load("../layout/header.html")
 
         $(".footer").load("../layout/footer.html")
+        function del(id) {
+            console.log(1)
+            for (let index = 0; index < carts.length; index++) {
+                if (carts[index] == id) {
+                    carts.splice(index, 1)
+                    localStorage.setItem("carts", JSON.stringify(carts));
+                    window.location.reload();
+                }
+
+            }
+        }
+        function order() {
+            if(localStorage.getItem('ordered') && localStorage.getItem('carts')){
+            localStorage.setItem("ordered",[...localStorage.getItem("carts"), ...(localStorage.getItem("ordered"))])
+        }
+        else if(localStorage.getItem("carts")){
+            localStorage.setItem("ordered",localStorage.getItem("carts"))
+        }
+        else{
+
+            return false
+        }
+        localStorage.removeItem("carts")
+            window.location.href = "order.html"
+        }
     </script>
 </body>
 

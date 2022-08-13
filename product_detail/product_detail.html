@@ -15,7 +15,7 @@
     <link rel="stylesheet" href="../layout/header-css.css">
     <link rel="stylesheet" href="../layout/footer-css.css">
     <script src="../layout/footer-controller.js" defer></script>
-    <script src="../layout/header-controller.js" defer></script>
+    <script src="../layout/header-controller.js?v=1" defer></script>
     <script src="../utils/ntc.js"></script>
     <script src="../utils/addToCart.js?v=1"></script>
     <script src="product_detail_controller.js?v=1"></script>
@@ -29,43 +29,12 @@
 
         <div class="small-container product"></div>
 
-        <div class="small-container">
-            <h1 style="text-align: center;">Related Products</h1>
         
-            <div class="row1">
-            <div class="col-4">
-                <a href="">
-                    <img src="https://pubcdn.ivymoda.com/files/product/thumab/1600/2022/06/04/367e3ea60dbac47277e4e16600dc7735.jpg"
-                        alt="stuff" style="width:100%">
-                    <img src="https://pubcdn.ivymoda.com/files/product/thumab/1600/2022/06/06/93f876b63f4dc488bb993eccb8b0a6dd.jpg"
-                        alt="stuff" style="width:100%">
-                </a>
-            </div>
-
-            <div class="col-4">
-                <a href="">
-                    <img src="https://pubcdn.ivymoda.com/files/product/thumab/1600/2022/06/04/367e3ea60dbac47277e4e16600dc7735.jpg"
-                        alt="stuff" style="width:100%">
-                    <img src="https://pubcdn.ivymoda.com/files/product/thumab/1600/2022/06/06/93f876b63f4dc488bb993eccb8b0a6dd.jpg"
-                        alt="stuff" style="width:100%">
-                </a>
-            </div>
-
-            <div class="col-4">
-                <a href="">
-                    <img src="https://pubcdn.ivymoda.com/files/product/thumab/1600/2022/06/04/367e3ea60dbac47277e4e16600dc7735.jpg"
-                        alt="stuff" style="width:100%">
-                    <img src="https://pubcdn.ivymoda.com/files/product/thumab/1600/2022/06/06/93f876b63f4dc488bb993eccb8b0a6dd.jpg"
-                        alt="stuff" style="width:100%">
-                </a>
-            </div>
-        </div>
-    </div>
         <div class="trending">
             <div>
                 <img src="https://pubcdn.ivymoda.com/files/news/2022/08/02/ec263a1c4def983e56cd5edecbeb64ff.jpg"  width="100%">
                 <div class="link-trending">
-                    <a href="../Product/product.html"><button class="btn2">XEM NGAY BST</button></a>
+                    <button class="btn2" onclick="goToPs()">XEM NGAY BST</button>
                 </div>
             </div>
             
@@ -93,13 +62,7 @@
             <span class="hide more">${moreText}</span>`;
             }
         });
-        function readMore(btn) {
-            var post = btn.parentElement;
-            //console.log(post);
-            post.querySelector(".dots").classList.toggle("hide");
-            post.querySelector(".more").classList.toggle("hide");
-            btn.textContent == "Read More" ? btn.textContent = "Read Less" : btn.textContent = "Read More";
-        }
+        
     </script>
 </body>
 

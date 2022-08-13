@@ -1,69 +1,99 @@
 $(document).ready(function () {
-    if(localStorage.getItem("cateId")){
-    var cateId = localStorage.getItem("cateId");
-}
-else if(localStorage.getItem("search")){
-    var search = localStorage.getItem("search");
-}
+    if (localStorage.getItem("cateId")) {
+        var cateId = localStorage.getItem("cateId");
+    }
+    else if (localStorage.getItem("search")) {
+        var search = localStorage.getItem("search");
+    }
     // localStorage()
-    else{
+    else {
         var gender = localStorage.getItem("gender");
     }
     var count = 0;
+    var countP = 0;
     var carts = [];
     var carts = JSON.parse(localStorage.getItem("carts"));
 
     $.getJSON("../data/product.JSON", function (data, textStatus, jqXHR) {
+        var limit = 8;
+        var numPage = Math.ceil(data.length / limit);
+        if (localStorage.getItem("page")) {
+            var curPage = localStorage.getItem("page")
+        }
+        else {
+            localStorage.setItem("page", 0)
+        }
         $($('<div class="item-cat-prod row"></div>')).appendTo($("list-prod"));
         $.each(data, function (indexInArray, valueOfElement) {
+
             let carted = false
-            if(search?data[indexInArray].title.toLowerCase().includes(search.toLowerCase()):(cateId||gender?(cateId?data[indexInArray].id_sub_category == cateId:data[indexInArray].gender == gender):true) ){
-                if(carts){
-                carts.forEach(cart => {
-                    if(cart == data[indexInArray].id){
-                        carted = true;
+            if (search ? data[indexInArray].title.toLowerCase().includes(search.toLowerCase()) : (cateId || gender ? (cateId ? data[indexInArray].id_sub_category == cateId : data[indexInArray].gender == gender) : true)) {
+                
+                countP++;
+                if (indexInArray < (parseInt(curPage) + 1) * limit && indexInArray >= (parseInt(curPage) * limit)) {
+
+                    if (carts) {
+                        carts.forEach(cart => {
+                            if (cart == data[indexInArray].id) {
+                                carted = true;
+                            }
+                        });
                     }
-                });}
-                let c = `
+                    let c = `
                 <div class="product">
                 <div class="thumb-product">
                     
-                        <img src="../img/product_img/`+ data[indexInArray].id_category + '/' + data[indexInArray].id_sub_category + '/' + data[indexInArray].id + `/1.jpg" onclick="goToProd(`+(data[indexInArray].id-1)+`)"alt="">
+                        <img src="../img/product_img/`+ data[indexInArray].id_category + '/' + data[indexInArray].id_sub_category + '/' + data[indexInArray].id + `/1.jpg" onclick="goToProd(` + (data[indexInArray].id - 1) + `)"alt="">
                     
                 </div>
                 <div class="info-product">
-                    <div class="list-color" style="background-color: `+data[indexInArray].color+`">
+                    <div class="list-color" style="background-color: `+ data[indexInArray].color + `">
                     </div>
-                    <h3 class="title-product" onclick="goToProd(`+data[indexInArray].id+`)">`+ data[indexInArray].title + `</h3>
+                    <h3 class="title-product" onclick="goToProd(`+ (data[indexInArray].id - 1) + `)">` + data[indexInArray].title + `</h3>
                     <div class="price-product">
                         <ins>
                         
-                        <span><strike>$`+(data[indexInArray].price.replace("$", ""))*2+`</strike></span>
+                        <span><strike>$`+ (data[indexInArray].price.replace("$", "")) * 2 + `</strike></span>
                             <span>`+ data[indexInArray].price + `</span>
                         </ins>
                     </div>
                 </div>
                 <div class="">
                     <span>
-                        <button class="btn-cart add-to-cart `+(carted?"disable":"")+`" onclick="addToCart(`+data[indexInArray].id+`, this)"><i class="fa-solid fa-cart-arrow-down fa-lg"></i></button>
+                        <button class="btn-cart add-to-cart `+ (carted ? "disable" : "") + `" ` + (carted ? "disabled" : "") + ` onclick="addToCart(` + data[indexInArray].id + `, this)"><i class="fa-solid fa-cart-arrow-down fa-lg"></i></button>
                     </span>
                 </div>
             </div>`
-            if (count % 4 == 0) {
-                $($('<div class="item-cat-prod row"></div>')).appendTo($(".list-prod"));
+                    if (count % 4 == 0) {
+                        $($('<div class="item-cat-prod row"></div>')).appendTo($(".list-prod"));
+                    }
+
+                    $(c).appendTo($(".item-cat-prod")[Math.floor(count / 4)]);
+
+                    count += 1;
+                }
             }
 
-            $(c).appendTo($(".item-cat-prod")[Math.floor(count / 4)]);
-            
-            count += 1;
-            }
-            
         });
+        console.log(countP)
+        if (curPage > 0) {
+            $("<button onclick='pageChange(" + (parseInt(curPage) - 1) + ")'>Pre</button>").appendTo("#page-breaker");
+        }
+        for (let index = 0; index < Math.ceil(parseInt(countP) / limit - 1); index++) {
+            $("<button onclick='pageChange(" + index + ")' " + (index == curPage ? "class='active'" : "") + ">" + (index + 1) + "</button>").appendTo("#page-breaker");
+
+        }
+        if (curPage < numPage - 1 && Math.ceil(parseInt(countP) / limit) > 0) {
+            $("<button onclick='pageChange(" + (parseInt(curPage) + 1) + ")'>Next</button>").appendTo("#page-breaker");
+        }
     }
     );
 });
-function goToProd(id){
-        localStorage.setItem("p_id", id);
-        window.location.href = "../product_detail/product_detail.html";
+function goToProd(id) {
+    localStorage.setItem("p_id", id);
+    window.location.href = "../product_detail/product_detail.html";
 }
-
+function pageChange(i) {
+    localStorage.setItem("page", i)
+    window.location.reload()
+}

@@ -1,0 +1,262 @@
+
+
+.container {
+    /* width: 1380px; */
+    margin: 0 auto;
+}
+
+
+.breadcrumb__list {
+    display: flex;
+    padding: 20px 0;
+    margin-bottom: 50px;
+    font-weight: 900;
+}
+
+.breadcrumb__list a {
+    color: #6c6d70;
+    display: inline;
+    font-family: 'Montserrat';
+    font-size: 16px;
+    line-height: 24px;
+    text-align: left;
+    margin-right: 20px;
+
+}
+
+.breadcrumb__list {
+    border-bottom: 1px solid #E7E8E9;
+}
+
+.banner img {
+    width: 100%;
+    height: 660px;
+    border-top-left-radius: 85px;
+    border-bottom-right-radius: 85px;
+}
+
+.pb-40 {
+    padding-top: 40px;
+    padding-bottom: 40px;
+}
+
+.contact-info {
+    width: 32%;
+    float: left;
+}
+
+.contact-form {
+    width: 65%;
+    float: right;
+}
+
+.contact-info-list li {
+    align-items: center;
+    border-color: #e7e8e9;
+    /* border-radius:32px 0px 0px; */
+    border-style: solid;
+    border-width: 1px;
+    color: #6c6d70;
+    display: flex;
+    line-height: 24px;
+    padding: 18px 40px;
+    text-align: left;
+    margin-bottom: 30px;
+    font-size: 16px;
+    font-weight: 900;
+}
+
+.ci-item-1 {
+    border-top-left-radius: 30px;
+}
+
+.ci-item-4 {
+    border-bottom-right-radius: 30px;
+}
+
+.ci-item-info {
+    text-align: left;
+    width: 70%;
+}
+
+.ci-item-icon {
+    align-items: center;
+    background-color: #f7f8f9;
+    border-radius: 50%;
+    color: #221f20;
+    display: flex;
+    flex-basis: 70px;
+    font-size: 24px;
+    justify-content: center;
+    line-height: 24px;
+    text-align: left;
+    margin-right: 30px;
+    width: 40px;
+    height: 70px;
+}
+
+.ci-item-info h4 {
+    margin-bottom: 8px;
+    font-size: 16px;
+    line-height: 24px;
+    color: #221f20;
+}
+
+.ci-item-info p {
+    color: #6c6d70;
+    font-family: 'Montserrat';
+    line-height: 24px;
+    text-align: left;
+}
+
+/* form-contact */
+.contact-form {
+    border-color: #e7e8e9;
+    border-radius: 32px 0px;
+    border-style: solid;
+    border-width: 1px;
+    color: #6c6d70;
+    line-height: 24px;
+    padding: 20px;
+    text-align: left;
+}
+
+
+input:focus~label,
+textarea:focus~label,
+input:valid~label,
+textarea:valid~label {
+    font-size: 0.75em;
+    color: #999;
+    top: -5px;
+    -webkit-transition: all 0.225s ease;
+    transition: all 0.225s ease;
+}
+
+.styled-input {
+    float: left;
+    width: 316px;
+    margin: 1rem 0;
+    position: relative;
+    border-radius: 4px;
+}
+
+@media only screen and (max-width: 768px) {
+    .styled-input {
+        width: 100%;
+    }
+}
+
+.styled-input label {
+    color: #999;
+    padding: 1.3rem 30px 1rem 30px;
+    position: absolute;
+    top: 10px;
+    left: 0;
+    -webkit-transition: all 0.25s ease;
+    transition: all 0.25s ease;
+    pointer-events: none;
+}
+
+.styled-input.wide {
+    width: 650px;
+    max-width: 100%;
+}
+
+.contact-form input,
+.contact-form textarea {
+    padding: 30px;
+    border: 0;
+    width: 100%;
+    font-size: 1rem;
+    color: #333;
+    border-radius: 4px;
+    border: 1px solid #333;
+}
+
+input:focus,
+textarea:focus {
+    outline: 0;
+}
+
+input:focus~span,
+textarea:focus~span {
+    width: 100%;
+    -webkit-transition: all 0.075s ease;
+    transition: all 0.075s ease;
+}
+
+textarea {
+    width: 100%;
+    min-height: 15em;
+}
+
+.input-container {
+    width: 650px;
+    max-width: 100%;
+    margin: 20px auto 25px auto;
+}
+
+.btn {
+    width: 100%;
+    text-transform: uppercase;
+    font-weight: 600;
+    font-size: 16px;
+    line-height: 24px;
+}
+
+.btn-large {
+    align-items: center;
+    background-color: black;
+    border-color: #221f20;
+    border-radius: 16px 0px;
+    border-style: solid;
+    border-width: 1px;
+    color: #fff;
+    display: flex;
+    font-family: 'Montserrat';
+    font-weight: 600;
+    justify-content: center;
+    line-height: 24px;
+    padding: 12px 24px;
+    text-align: center;
+    text-transform: uppercase;
+    width: 282px;
+}
+
+.btn-large:hover {
+    background-color: #ffffff;
+    color: #221f20;
+    transition: 0.3s;
+}
+
+@media (max-width: 768px) {
+    .submit-btn {
+        width: 100%;
+        float: none;
+        text-align: center;
+    }
+}
+
+.contact-form h3 {
+    color: #221f20;
+    font-family: 'Montserrat';
+    font-size: 30px;
+    font-weight: bold;
+    line-height: 32px;
+    text-align: left;
+    font-weight: 900;
+}
+
+.contact-form p {
+    color: #6c6d70;
+    font-family: 'Montserrat';
+    line-height: 24px;
+    margin: 24px 0px;
+    text-align: left;
+    font-weight: 900;
+}
+
+.google-map {
+    margin-top: 20px;
+}

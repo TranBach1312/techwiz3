@@ -109,13 +109,16 @@
                 </div>
             </div>
         </section>
+        <div id="page-breaker"></div>
         <div class="footer"></div>
     </div>
     <script>
         $(".header").load("../layout/header.html");
 
         $(".footer").load("../layout/footer.html");
-        
+        window.onbeforeunload = function () {
+    window.scrollTo(0, 0);
+}
     </script>
 </body>
 </html>

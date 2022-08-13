@@ -8,6 +8,14 @@
     z-index: 2;
     border-bottom: 1px solid #57585A;
 }
+ul,
+li {
+    list-style: none;
+}
+
+a {
+    text-decoration: none;
+}
 
 .header .main-menu{
     width: 570px;
@@ -20,10 +28,10 @@
 }
 .header .main-menu ul li{
     text-transform: uppercase;
-    padding: 20px;
+    padding: 10px;
     font-weight: 600;
     font-size: 12px;
-
+    cursor: pointer;
 }
 .header .logo{
     width: 400px;
@@ -100,7 +108,7 @@
     display: none;
     width: 1380px;
     position: absolute;
-    top: 60px;
+    top: 55px;
     left: 0px;
     border: 1px ;
     border: 0.5px solid #f2f2f2;
@@ -127,8 +135,10 @@
     color: #57585A;
     font-size: 12px;
 }
-
-.header .main-menu .sub-menu ul li:hover button, .header .main-menu ul li:hover{
+.header .menu-item a{
+    color: black;
+}
+.header .main-menu .sub-menu ul li:hover button, .header .main-menu ul li:hover, .header .main-menu .menu-item:hover a{ 
     color: #AC2F33;
 }
 .header .main-menu ul li:hover .sub-menu, .header .main-menu ul li .sub-menu:hover {
