@@ -1,5 +1,18 @@
 
 $(document).ready(function () {
+function numCarts() {
+    var numCart = 0;
+    if (((localStorage.getItem("carts")) != null)) {
+
+        var numCart = (JSON.parse(localStorage.getItem("carts"))).length
+        $("#num-cart").html($("<p>" + numCart + "</p>"));
+    }
+    else {
+        localStorage.setItem("carts", JSON.stringify("[]"))
+        $("#num-cart").html("<p>"+numCart+"</p>");
+    }
+  }
+  setInterval(numCarts, 500)
     var p = "..";
     if (document.location.pathname == "/index.html") {
         p = ".";
@@ -31,13 +44,14 @@ $(document).ready(function () {
 
 
     setTimeout(hiUser(), 1000)
-    $("#searchForm").submit(function (e) { 
+    $("#searchForm").submit(function (e) {
         e.preventDefault();
         localStorage.removeItem("gender")
         localStorage.removeItem("cateId")
         localStorage.setItem("search", $("#searchForm input").val())
         window.location.href = "../product/product.html"
     });
+
 });
 var p = "..";
 if (document.location.pathname == "/index.html") {

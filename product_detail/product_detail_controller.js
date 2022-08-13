@@ -60,14 +60,12 @@ $(document).ready(function () {
             
             var ordered = JSON.parse(localStorage.getItem("ordered"))
                 var check = true;
-            ordered.forEach(element => {
-                if(data[p_id].id == element){
-                    c += `<strike>Out Stock</strike>`
-                    check = false;
-                    
-                }
+                if(ordered){ordered.forEach(element => {
+                    if (data[indexInArray].id == element) {
+                        check = false;
+                    }
 
-            });
+                });}
             if(check){
                 c+="Stock"
             }

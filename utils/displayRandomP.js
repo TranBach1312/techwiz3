@@ -3,15 +3,14 @@ $(document).ready(function () {
    
     var carts = [];
     var carts = JSON.parse(localStorage.getItem("carts"));
+    
 
     $.getJSON("../data/product.JSON", function (data, textStatus, jqXHR) {
         $($('<div class="item-cat-prod row"></div>')).appendTo($("#prod-rand"));
         var randP = [];
-        for (i = 0; i < 5; i++) {
+        for (i = 0; i < 10; i++) {
             let rand = Math.ceil(Math.random() * data.length)
             let check = true;
-            console.log(rand)
-            console.log(i)
             if (randP.length != 0) {
                 randP.forEach(element => {
     
@@ -27,7 +26,6 @@ $(document).ready(function () {
                 randP.push(rand);
             }
         }
-        console.log(randP)
         $.each(data, function (indexInArray, valueOfElement) {
             let carted = false
             randP.forEach(rand => {
@@ -41,12 +39,12 @@ $(document).ready(function () {
                         });
                     } var ordered = JSON.parse(localStorage.getItem("ordered"))
                     var check = true;
-                    ordered.forEach(element => {
+                    if(ordered){ordered.forEach(element => {
                         if (data[indexInArray].id == element) {
                             check = false;
                         }
 
-                    });
+                    });}
                     let c = `
                 <div class="product">
                 <div class="thumb-product">

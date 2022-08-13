@@ -34,7 +34,7 @@
 }
 .top-footer .footer-item .info p, .top-footer .footer-item .info a{
     margin-top: 20px;
-    color: #3E3E3F;
+    color: black;
 }
 .top-footer .footer-item .info{
     margin: 20px 0;
@@ -165,5 +165,9 @@
 }
 .cal-item:nth-child(odd){
     background-color: #218ADB;
+    color: white;
+}
+.cal-item:last-child{
+    background-color: #FB946B;
     color: white;
 }

@@ -1,70 +1,78 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Thrift Fashion</title>
-    <script src="https://kit.fontawesome.com/2f97f7412a.js" crossorigin="anonymous"></script>
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script> 
-    
-    <link rel="stylesheet" href="./layout/style.css">
-    <link rel="stylesheet" href="./layout/header-css.css">
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Thrift Fashion</title>
+  <script src="https://kit.fontawesome.com/2f97f7412a.js" crossorigin="anonymous"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
 
-    <script src="./layout/header-controller.js" defer></script>
-    <script src="./layout/footer-controller.js"></script>
-    <script src="./home/home-controller.js" defer></script>
-    <link rel="stylesheet" href="./home/home-css.css">
-    <link rel="stylesheet" href="layout/footer-css.css">
-    <link href="./home/home-css.css">
-    <script src="./utils/displayRandomP.js"></script>
-    <script src="./utils/addToCart.js"></script>
+  <link rel="stylesheet" href="./layout/style.css">
+  <link rel="stylesheet" href="./layout/header-css.css">
+
+  <script src="./layout/header-controller.js?v=1" ></script>
+  <script src="./layout/footer-controller.js"></script>
+  <script src="./home/home-controller.js" defer></script>
+  <link rel="stylesheet" href="./home/home-css.css">
+  <link rel="stylesheet" href="layout/footer-css.css">
+  <link href="./home/home-css.css">
+  <script src="./utils/displayRandomP.js"></script>
+  <script src="./utils/addToCart.js"></script>
 </head>
-<body>
-    <div class="container">
-        <div class="header"></div>
-        <div style="width: 100%; height: 80px;"></div>
-        <div class="main">
-            <div class="sub-border">
-                <div></div>
-                <div></div>
-                <div></div>
-            </div>
-            
-            <div class="slideshow-container">
-                <!-- Full-width images with number and caption text -->
-                <div class="mySlides fade">
-                  <img src="https://pubcdn.ivymoda.com/files/news/2022/08/08/ccba6f5e4fb3d019ab4e3d9e7082cd4a.jpg" style="width:100%">
-                  
-                </div>
-          
-                <div class="mySlides fade">
-                  <img src="https://pubcdn.ivymoda.com/files/news/2022/08/08/1c733a7056fba56bce6beda15155fef7.jpg" style="width:100%">
-                  
-                </div>
-          
-                <div class="mySlides fade">
-                  <img src="https://pubcdn.ivymoda.com/files/news/2022/08/10/2243a64659a21a7170f58bbbdab2802a.jpg" style="width:100%">
-                  
-                </div>
-                <!-- Next and previous buttons -->
-                <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
-                <a class="next" onclick="plusSlides(1)">&#10095;</a>
-              </div>
-        </div>
-        <div id="prod-rand">
-          <h4>SOME PRODUCT</h4>
-        </div>
-        <div class="footer"></div>
-    </div>
 
-    <script>
-    
-        $(".header").load("./layout/header.html");
-        $(".footer").load("./layout/footer.html")
-        function goHome(){
-          window.location.href = "index.html";
-        }
-    </script>
+<body>
+  <div class="container">
+    <div class="header"></div>
+    <div style="width: 100%; height: 80px;"></div>
+    <div class="main">
+      <div class="sub-border">
+        <div>Freeship for the orders over $500</div>
+        <div>High quality</div>
+        <div>Membership policy</div>
+      </div>
+
+      <div class="slideshow-container">
+        <!-- Full-width images with number and caption text -->
+        <div class="mySlides fade">
+          <img src="./img/slide_img/297719998_485290503596399_1355126344942800893_n.png"
+            style="width:100%">
+
+        </div>
+        <div class="mySlides fade">
+          <img src="./img/slide_img/297219488_722731882229382_598745843962830843_n.png"
+            style="width:100%">
+
+        </div>
+
+        <div class="mySlides fade">
+          <img src="https://pubcdn.ivymoda.com/files/news/2022/08/08/1c733a7056fba56bce6beda15155fef7.jpg"
+            style="width:100%">
+
+        </div>
+
+        
+        <!-- Next and previous buttons -->
+        <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+        <a class="next" onclick="plusSlides(1)">&#10095;</a>
+      </div>
+    </div>
+    <div id="prod-rand">
+      <h4>SOME PRODUCT</h4>
+    </div>
+    <div class="footer"></div>
+  </div>
+
+  <script>
+
+    $(".header").load("./layout/header.html");
+    $(".footer").load("./layout/footer.html")
+    function goHome() {
+      window.location.href = "index.html";
+    }
+
+  </script>
 </body>
+
 </html>

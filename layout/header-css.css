@@ -1,4 +1,4 @@
-.header{
+.header {
     height: 80px;
     width: 1380px;
     display: flex;
@@ -8,6 +8,7 @@
     z-index: 2;
     border-bottom: 1px solid #57585A;
 }
+
 ul,
 li {
     list-style: none;
@@ -17,7 +18,7 @@ a {
     text-decoration: none;
 }
 
-.header .main-menu{
+.header .main-menu {
     width: 570px;
 }
 
@@ -26,22 +27,26 @@ a {
     display: flex;
 
 }
-.header .main-menu ul li{
+
+.header .main-menu ul li {
     text-transform: uppercase;
     padding: 10px;
     font-weight: 600;
     font-size: 12px;
     cursor: pointer;
 }
-.header .logo{
+
+.header .logo {
     width: 400px;
 }
-.header .logo img{
+
+.header .logo img {
     width: 140px;
     height: auto;
     cursor: pointer;
 }
-.header .search{
+
+.header .search {
     display: flex;
     flex-direction: row;
     border: 0.5px solid rgb(177, 177, 177);
@@ -49,68 +54,80 @@ a {
     width: 240px;
     border-radius: 3px;
     overflow: hidden;
-    
+
 }
-.header .search form{
+
+.header .search form {
     padding: 0px 5px;
 }
-.header .search button, .header .search input{
+
+.header .search button,
+.header .search input {
     border: none;
     outline: none;
     background-color: transparent;
     height: 40px;
 }
-.header .search input{
+
+.header .search input {
     width: 80%;
     color: #57585A;
 }
-.header .search button{
+
+.header .search button {
     width: 10%;
     height: 100%;
 }
-.header .search input::placeholder{
+
+.header .search input::placeholder {
     text-transform: uppercase;
     color: #57585A;
 }
 
-.header .search button i{
+.header .search button i {
     color: black;
 }
-.fa-solid{
+
+.fa-solid {
     color: black;
 }
-.header .header-actions{
+
+.header .header-actions {
     height: 100%;
     /* width: 270px; */
     margin-left: 20px;
 }
-.header .header-actions ul{
+
+.header .header-actions ul {
     height: 100%;
     list-style-type: none;
     display: flex;
     align-items: center;
 }
-.header .header-actions ul li{
+
+.header .header-actions ul li {
     /* width: 30px; */
     height: 30px;
     margin-right: 10px;
     line-height: 30px;
     text-align: center;
 }
-.header .header-actions .uName{
+
+.header .header-actions .uName {
     overflow: hidden;
     text-overflow: ellipsis;
     word-spacing: nowrap !important;
     width: 100px;
     text-align: start;
 }
-.header .main-menu .sub-menu{
+
+.header .main-menu .sub-menu {
     display: none;
     width: 1380px;
     position: absolute;
     top: 55px;
     left: 0px;
-    border: 1px ;
+    border: 1px;
     border: 0.5px solid #f2f2f2;
     border-radius: 5px;
     background-color: white;
@@ -119,32 +136,62 @@ a {
     animation-duration: 0.5s;
     animation-fill-mode: forwards;
 }
-.header .main-menu .sub-menu ul{
+
+.header .main-menu .sub-menu ul {
     flex-direction: column;
     float: left;
     padding: 10px 70px;
 }
-.header .main-menu .sub-menu ul h3{
+
+.header .main-menu .sub-menu ul h3 {
     text-align: center;
     color: #57585A !important;
 }
-.header .main-menu .sub-menu ul li button{
+
+.header .main-menu .sub-menu ul li button {
     background-color: transparent;
     border: none;
     cursor: pointer;
     color: #57585A;
     font-size: 12px;
 }
-.header .menu-item a{
+
+.header .menu-item a {
     color: black;
 }
-.header .main-menu .sub-menu ul li:hover button, .header .main-menu ul li:hover, .header .main-menu .menu-item:hover a{ 
+
+.header .main-menu .sub-menu ul li:hover button,
+.header .main-menu ul li:hover,
+.header .main-menu .menu-item:hover a {
     color: #AC2F33;
 }
-.header .main-menu ul li:hover .sub-menu, .header .main-menu ul li .sub-menu:hover {
+
+.header .main-menu ul li:hover .sub-menu,
+.header .main-menu ul li .sub-menu:hover {
     display: block;
 }
+
 @keyframes showMenu {
-    from{transform: translateY(30%);}
-    to{transform: translateY(0);}
+    from {
+        transform: translateY(30%);
+    }
+
+    to {
+        transform: translateY(0);
+    }
+}
+
+#num-cart {
+    width: 14px;
+    height: 14px;
+    border-radius: 50%;
+    background-color: red;
+    color: white;
+    text-align: center;
+    line-height: 14px;
+    font-size: 10px;
+    font-weight: 900;
+    position: absolute;
+    top: 0;
+    right: -10px;
 }

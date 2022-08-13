@@ -170,16 +170,19 @@ ol>li>a {
 }
 
 .price-product ins {
-    color: #3E3E3F;
+    color: #F54E3B;
     font-weight: 600;
-    font-size: 16px;
+    font-size: 25px;
     line-height: 24px;
     text-decoration: none;
     display: inline-block;
     vertical-align: middle;
     margin-left: 5px;
 }
-
+.price-product ins span strike{
+    color: rgba(128, 128, 128, 0.614);
+    font-size: 18px;
+}
 .price-product ins strike {
     color: #57585A;
     font-size: 12px;
@@ -219,12 +222,12 @@ ol>li>a {
 }
 .disable {
     cursor: no-drop;
-    background-color: #F7F8F9;
+    background-color: gray;
 
 }
 
 .disable i{
-    color: #6C6D70;
+    color: white;
 }
 #page-breaker{
     margin-top: 50px;

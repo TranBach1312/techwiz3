@@ -15,7 +15,7 @@ $(document).ready(function () {
     var products = [];
     var countP = 0;
     $.getJSON("../data/product.JSON", function (data, textStatus, jqXHR) {
-        var limit = 8;
+        var limit = 12;
         var numPage = Math.ceil(data.length / limit);
 if (localStorage.getItem("page")) {
             var curPage = localStorage.getItem("page")
@@ -34,9 +34,8 @@ if (localStorage.getItem("page")) {
                 return products
             }
 
-            countP = products.length
-            return countP, numPage;
         });
+        console.log(products)
         
         $.each(products, function (indexInArray, valueOfElement) {
 
@@ -45,7 +44,7 @@ if (localStorage.getItem("page")) {
                 let carted = false
                 if (carts) {
                     carts.forEach(cart => {
-                        if (cart == data[indexInArray].id) {
+                        if (cart == data[products[indexInArray]].id) {
                             carted = true;
                         }
                     });
@@ -54,24 +53,24 @@ if (localStorage.getItem("page")) {
         <div class="product">
         <div class="thumb-product">
             
-                <img src="../img/product_img/`+ data[indexInArray].id_category + '/' + data[indexInArray].id_sub_category + '/' + data[indexInArray].id + `/1.jpg" onclick="goToProd(` + (data[indexInArray].id - 1) + `)"alt="">
+                <img src="../img/product_img/`+ data[products[indexInArray]].id_category + '/' + data[products[indexInArray]].id_sub_category + '/' + data[products[indexInArray]].id + `/1.jpg" onclick="goToProd(` + (data[products[indexInArray]].id - 1) + `)"alt="">
             
         </div>
         <div class="info-product">
-            <div class="list-color" style="background-color: `+ data[indexInArray].color + `">
+            <div class="list-color" style="background-color: `+ data[products[indexInArray]].color + `">
             </div>
-            <h3 class="title-product" onclick="goToProd(`+ (data[indexInArray].id - 1) + `)">` + data[indexInArray].title + `</h3>
+            <h3 class="title-product" onclick="goToProd(`+ (data[products[indexInArray]].id - 1) + `)">` + data[products[indexInArray]].title + `</h3>
             <div class="price-product">
                 <ins>
                 
-                <span><strike>$`+ (data[indexInArray].price.replace("$", "")) * 2 + `</strike></span>
-                    <span>`+ data[indexInArray].price + `</span>
+                <span><strike>$`+ (data[products[indexInArray]].price.replace("$", "")) * 2 + `</strike></span>
+                    <span>`+ data[products[indexInArray]].price + `</span>
                 </ins>
             </div>
         </div>
         <div class="">
             <span>
-                <button class="btn-cart add-to-cart `+ (carted ? "disable" : "") + `" ` + (carted ? "disabled" : "") + ` onclick="addToCart(` + data[indexInArray].id + `, this)"><i class="fa-solid fa-cart-arrow-down fa-lg"></i></button>
+                <button class="btn-cart add-to-cart `+ (carted ? "disable" : "") + `" ` + (carted ? "disabled" : "") + ` onclick="addToCart(` + data[products[indexInArray]].id + `, this)"><i class="fa-solid fa-cart-arrow-down fa-lg"></i></button>
             </span>
         </div>
     </div>`
@@ -87,6 +86,7 @@ if (localStorage.getItem("page")) {
 
 
         });
+        countP = products.length
         if (localStorage.getItem("page")) {
                 var curPage = localStorage.getItem("page")
             }
@@ -98,17 +98,16 @@ if (localStorage.getItem("page")) {
             if (curPage > 0) {
                 $("<button onclick='pageChange(" + (parseInt(curPage) - 1) + ")'>Pre</button>").appendTo("#page-breaker");
             }
-            for (let index = 0; index < Math.ceil(parseInt(countP) / limit - 1); index++) {
+            console.log(countP)
+            for (let index = 0; index < Math.ceil(parseInt(countP) / limit); index++) {
                 $("<button onclick='pageChange(" + index + ")' " + (index == curPage ? "class='active'" : "") + ">" + (index + 1) + "</button>").appendTo("#page-breaker");
         
             }
-            if (curPage < numPage - 1 && Math.ceil(parseInt(countP) / limit) > 0) {
+            if (curPage <  Math.ceil(parseInt(countP) / limit) - 1 && Math.ceil(parseInt(countP) / limit) > 0) {
                 $("<button onclick='pageChange(" + (parseInt(curPage) + 1) + ")'>Next</button>").appendTo("#page-breaker");
             }
     }
     );
-    var limit = 8;
-    var numPage = Math.ceil(data.length / limit);
 });
 
 function goToProd(id) {
