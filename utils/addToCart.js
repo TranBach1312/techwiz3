@@ -16,7 +16,13 @@ function addToCart(id, that = null) {
         localStorage.setItem("carts", "[]")
     }
     var carts = []
-    var carts = JSON.parse(localStorage.getItem("carts"));
+    var json = localStorage.getItem("carts")
+    if(json != null && json != "" && json != undefined) {
+        carts = JSON.parse(json);
+        if(!Array.isArray(carts)) {
+            carts = [];
+        }
+    }
     carts.push(id);
     localStorage.setItem("carts", JSON.stringify(carts));
 }

@@ -31,13 +31,14 @@ $(document).ready(function () {
             randP.forEach(rand => {
 
                 if (data[indexInArray].id == rand) {
-                    if (carts) {
+                    if (carts && carts != '[]') {
                         carts.forEach(cart => {
                             if (cart == data[indexInArray].id) {
                                 carted = true;
                             }
                         });
-                    } var ordered = JSON.parse(localStorage.getItem("ordered"))
+                    }
+                     var ordered = JSON.parse(localStorage.getItem("ordered"))
                     var check = true;
                     if(ordered){ordered.forEach(element => {
                         if (data[indexInArray].id == element) {

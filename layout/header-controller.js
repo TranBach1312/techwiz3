@@ -8,7 +8,6 @@ function numCarts() {
         $("#num-cart").html($("<p>" + numCart + "</p>"));
     }
     else {
-        localStorage.setItem("carts", JSON.stringify("[]"))
         $("#num-cart").html("<p>"+numCart+"</p>");
     }
   }

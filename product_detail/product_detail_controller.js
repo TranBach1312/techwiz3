@@ -60,8 +60,9 @@ $(document).ready(function () {
             
             var ordered = JSON.parse(localStorage.getItem("ordered"))
                 var check = true;
-                if(ordered){ordered.forEach(element => {
-                    if (data[indexInArray].id == element) {
+                if(ordered){
+                    ordered.forEach(element => {
+                    if (data[p_id].id == element) {
                         check = false;
                     }
 
